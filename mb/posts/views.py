@@ -8,4 +8,7 @@ class PostView(ListView):
     
 
 def HomePageView(request):
-    return render(request, 'posts/home.html')
+    posts = Post.objects.all()
+    context = {'posts': posts}
+    
+    return render(request, 'posts/home.html', context)

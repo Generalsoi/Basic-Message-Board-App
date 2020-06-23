@@ -3,12 +3,17 @@
 
 {% block content %}
 
+    {% include 'posts/navbar.html' %}
+
     <h1>Message board homepage</h1>
 
     <ul> 
-        {%for post in  object_list%}
-            <li> {{post}} </li>
+        {%for post in  posts%}
+            <li> {{post.text}} </li>
         {%endfor%}
     </ul>
+    <hr>
+
+    {% include 'posts/footer.html' %}
 
 {% endblock %}
